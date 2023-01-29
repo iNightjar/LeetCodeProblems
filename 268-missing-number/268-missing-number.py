@@ -1,10 +1,8 @@
 class Solution:
     def missingNumber(self, nums: List[int]) -> int:
-        nums.sort()
         lenght = len(nums)
-        # print(lenght)
-        for iterator in range(len(nums)):
-            if (iterator != nums[iterator]):
-                return iterator
-            if (nums[lenght-1] != lenght):
-                return lenght
+        maxSumOfElements = int((lenght*(lenght+1)/2))
+        sum = 0
+        for iterator in nums:
+            sum += iterator
+        return maxSumOfElements - sum
